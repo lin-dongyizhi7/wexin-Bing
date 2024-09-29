@@ -48,18 +48,54 @@ Page({
     chatList: [
       {
         id: new Date().getTime(),
-        message: '突然出现',
+        message: '突然出现XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
         time: new Date().getTime(),
         type: 1
-      }
+      },
+      {
+        id: new Date().getTime()+1,
+        message: '突然出现XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+        time: new Date().getTime(),
+        type: 1
+      },
+      {
+        id: new Date().getTime()+2,
+        message: '突然出现XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+        time: new Date().getTime(),
+        type: 1
+      },
+      {
+        id: new Date().getTime()+3,
+        message: '突然出现XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+        time: new Date().getTime(),
+        type: 1
+      },
+      {
+        id: new Date().getTime()+4,
+        message: '突然出现XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+        time: new Date().getTime(),
+        type: 0
+      },
+      {
+        id: new Date().getTime()+5,
+        message: '突然出现XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+        time: new Date().getTime(),
+        type: 0
+      },
+      {
+        id: new Date().getTime()+6,
+        message: '突然出现XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+        time: new Date().getTime(),
+        type: 1
+      },
     ],
     sendList: [],
     theme: 'light',
     inputMsg: ''
   },
 
-  bindMsgInput(e) {
-    this.setData({inputMsg: e.detail.value})
+  bindFormSubmit(e) {
+    this.setData({inputMsg: e.detail.value.textarea})
   },
 
   onLoad() {

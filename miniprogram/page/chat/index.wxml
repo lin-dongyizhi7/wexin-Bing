@@ -7,13 +7,17 @@
           <view class="msg-box">{{ item.message }}</view>
         </view>
         <view wx:else class="send-msg-item">
-          <view class="msg-box">{{ item.message }}</view>
+          <view class="msg-box send-msg-box">{{ item.message }}</view>
           <view class="qing-avatar"></view>
         </view>
       </view>
     </view>
   </view>
   <view class="chat-window">
-    <input class="weui-input" maxlength="1000" bindinput="bindMsgInput" />
+    <form bindsubmit="bindFormSubmit">
+      <textarea class="chat-input" auto-height maxlength="1000" name="textarea" style="width: 604rpx; display: block; box-sizing: content-box; left: 0rpx; top: 0rpx"></textarea>
+    </form>
+    <icon></icon>
+    <icon></icon>
   </view>
 </view>
