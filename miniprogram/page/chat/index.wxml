@@ -15,9 +15,16 @@
   </view>
   <view class="chat-window">
     <form bindsubmit="bindFormSubmit">
-      <textarea class="chat-input" auto-height maxlength="1000" name="textarea" style="width: 604rpx; display: block; box-sizing: content-box; left: 0rpx; top: 0rpx"></textarea>
+      <textarea class="chat-input" confirm-type="return" auto-height maxlength="1000" name="textarea"></textarea>
     </form>
-    <icon></icon>
-    <icon></icon>
+    <view class="opt-area">
+      <view wx:if="{{inputMsg}}">
+        <button class="send-btn" type="primary" form-type="submit" size="mini"></button>
+      </view>
+      <view wx:else class="default-opt">
+        <view class="emoji-btn"></view>
+        <view class="add-btn"></view>
+      </view>
+    </view>
   </view>
 </view>

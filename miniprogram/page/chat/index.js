@@ -33,6 +33,8 @@ Page({
         option_str_1: '1'
       })
     }
+
+    this.sayHello()
   },
   onShareAppMessage() {
     return {
@@ -45,48 +47,17 @@ Page({
   },
 
   data: {
-    chatList: [
-      {
+    chatList: [{
         id: new Date().getTime(),
         message: '突然出现XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
         time: new Date().getTime(),
         type: 1
       },
       {
-        id: new Date().getTime()+1,
-        message: '突然出现XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-        time: new Date().getTime(),
-        type: 1
-      },
-      {
-        id: new Date().getTime()+2,
-        message: '突然出现XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-        time: new Date().getTime(),
-        type: 1
-      },
-      {
-        id: new Date().getTime()+3,
-        message: '突然出现XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-        time: new Date().getTime(),
-        type: 1
-      },
-      {
-        id: new Date().getTime()+4,
-        message: '突然出现XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+        id: new Date().getTime() + 1,
+        message: '突然出现',
         time: new Date().getTime(),
         type: 0
-      },
-      {
-        id: new Date().getTime()+5,
-        message: '突然出现XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-        time: new Date().getTime(),
-        type: 0
-      },
-      {
-        id: new Date().getTime()+6,
-        message: '突然出现XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-        time: new Date().getTime(),
-        type: 1
       },
     ],
     sendList: [],
@@ -95,28 +66,15 @@ Page({
   },
 
   bindFormSubmit(e) {
-    this.setData({inputMsg: e.detail.value.textarea})
+    this.setData({
+      inputMsg: e.detail.value.textarea
+    })
   },
 
-  onLoad() {
-    this.setData({
-      theme: wx.getSystemInfoSync().theme || 'light'
-    })
-
-    if (wx.onThemeChange) {
-      wx.onThemeChange(({
-        theme
-      }) => {
-        this.setData({
-          theme
-        })
-      })
-    }
-
+  sayHello() {
     const time = new Date()
     const timeH = time.getHours()
     const timeM = time.getMinutes()
-
     console.log(time, timeH, timeM)
     let msg
     if (timeH > 5 && timeH < 8) {
@@ -134,14 +92,33 @@ Page({
     } else {
       msg = '小宝儿怎么啦，抱抱小宝儿~';
     }
-    this.data.chatList.push({
+    let newList = this.data.chatList.slice()
+    let msgObj = {
       id: time.getTime(),
       message: msg,
       time: time,
       type: 1
+    }
+    newList.push(msgObj)
+    this.setData({
+      chatList: newList
     })
-
     console.log(this.data.chatList)
+  },
+
+  onLoad() {
+    this.setData({
+      theme: wx.getSystemInfoSync().theme || 'light'
+    })
+    if (wx.onThemeChange) {
+      wx.onThemeChange(({
+        theme
+      }) => {
+        this.setData({
+          theme
+        })
+      })
+    }
   },
 
   kindToggle(e) {
