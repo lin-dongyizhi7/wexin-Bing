@@ -16,6 +16,8 @@
 
     "iconPathGame": "image/icon_game.png",
     "selectedIconPathGame": "image/icon_game_HL.png",
+    "iconPathVideo": "image/icon_video.png",
+    "selectedIconPathVideo": "image/icon_video_HL.png",
 
     "backgroundTextStyle": "dark"
   },
@@ -36,6 +38,8 @@
 
     "iconPathGame": "image/icon_game_dark.png",
     "selectedIconPathGame": "image/icon_game_HL.png",
+    "iconPathVideo": "image/icon_video_dark.png",
+    "selectedIconPathVideo": "image/icon_video_HL.png",
 
     "backgroundTextStyle": "light"
   }
