@@ -3,27 +3,27 @@
     <view class="chat-list">
       <view class="chat-item" wx:for-items="{{chatList}}" wx:key="id">
         <view wx:if="{{ item.type }}" class="receive-msg-item">
-          <view class="bing-avatar"></view>
+          <image class="avatar" src="./images/bing.jpg"></image>
           <view class="msg-box">{{ item.message }}</view>
         </view>
         <view wx:else class="send-msg-item">
           <view class="msg-box send-msg-box">{{ item.message }}</view>
-          <view class="qing-avatar"></view>
+          <image class="avatar" src="./images/qing.jpg"></image>
         </view>
       </view>
     </view>
   </view>
   <view class="chat-window">
     <form bindsubmit="bindFormSubmit">
-      <textarea class="chat-input" confirm-type="return" auto-height maxlength="1000" name="textarea"></textarea>
+      <textarea class="chat-input" bindinput="onInputMsgChange" confirm-type="return" auto-height maxlength="1000" name="textarea"></textarea>
     </form>
     <view class="opt-area">
       <view wx:if="{{inputMsg}}">
         <button class="send-btn" type="primary" form-type="submit" size="mini"></button>
       </view>
       <view wx:else class="default-opt">
-        <view class="emoji-btn"></view>
-        <view class="add-btn"></view>
+        <image class="opt-icon-btn" src="./images/add.png"></image>
+        <image class="opt-icon-btn" src="./images/emoji.png"></image>
       </view>
     </view>
   </view>

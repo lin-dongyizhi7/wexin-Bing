@@ -1,2 +1,6 @@
 <view class="page" data-weui-theme="{{theme}}">
+  <view class="index-hd">
+    <image class="index-logo" src="./images/logo_game.png"></image>
+    <view class="index-desc">以下是小游戏列表</view>
+  </view>
 </view>

@@ -69,6 +69,24 @@ Page({
     this.setData({
       inputMsg: e.detail.value.textarea
     })
+    let newList = this.data.sendList.slice()
+    const time = new Date()
+    let msgObj = {
+      id: time.getTime(),
+      message: e.detail.value.textarea,
+      time: time,
+      type: 0
+    }
+    newList.push(msgObj)
+    this.setData({
+      sendList: newList
+    })
+  },
+
+  onInputMsgChange(e) {
+    this.setData({
+      inputMsg: e.detail.value.textarea
+    })
   },
 
   sayHello() {
