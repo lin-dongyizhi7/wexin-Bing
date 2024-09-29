@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    gameList: []
+    gameList: [
+      {
+        id: 1,
+        name: '2048'
+      }
+    ]
   },
 
   /**
